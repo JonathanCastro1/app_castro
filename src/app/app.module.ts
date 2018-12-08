@@ -9,7 +9,9 @@ import { RegistroComponent } from './registro/registro.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginService } from './services/login.service';
 
-import {FormsModule} from '@angular/forms';
+
+/* importar ReactiveFormsModule,para poder usar this.fb.group etc */
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 /* mport {HttpModule} from '@angular/http'; */
 
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [LoginService],
