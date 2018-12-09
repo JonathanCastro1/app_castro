@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { DatatableComponent } from './datatable/datatable.component';
 
 /* para las rutas */
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     RegistroComponent,
     HeaderComponent,
     DashboardComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    DatatableComponent
   ],
   imports: [
     BrowserModule,

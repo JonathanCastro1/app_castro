@@ -4,33 +4,71 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { FormBuilder } from '@angular/forms';
 
+import { LoginService } from '../services/login.service';
+
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent implements OnInit { 
 
-  formulario: FormGroup;
+  mensaje: string;
+  alerta: any = false;
 
-  constructor(private fb: FormBuilder
+  usuario = {
+    nombre: '',
+    apellido: '',
+    email: '',
+    password: ''
+  }
+
+  constructor(private loginService: LoginService,
+    public router: Router
 
   ) { }
 
   ngOnInit() {
 
-    this.formulario = this.fb.group({
-      nombre: [''],
-      apellido: [''],
-      email: [''],
-      password: [''],
-    });
+  
 
   }
 
-  registrar() {
+  registrar(formulario) {
 
-    console.log(this.formulario);
+    //  console.log(formulario);
+
+
+    if (formulario.valid) {
+
+      this.loginService.registro(
+        formulario.value.nombre,
+        formulario.value.apellido,
+        formulario.value.email,
+        formulario.value.password
+      )
+        .subscribe(
+          res => {
+
+            console.log(res);
+
+          });
+
+      this.router.navigate(['login']);
+
+    } else {
+
+       this.alerta=true;
+       this.mensaje="Campos obligatorios"
+
+        console.log("Formulario invalido");
+
+    }
+
+
 
   }
 

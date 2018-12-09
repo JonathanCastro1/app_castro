@@ -4,8 +4,9 @@
 
 export const environment = {
   production: true,
-  login: 'https://localhost:8080/login',
-  allUsers: 'https://localhost:8080/usuarios'
+  base_url: 'http://127.0.0.1:8000' 
+ /*  registro: 'http://127.0.0.1:8000/registrar',
+  allUsers: 'http://127.0.0.1:8000/registrar' */
 };
 
 /*
