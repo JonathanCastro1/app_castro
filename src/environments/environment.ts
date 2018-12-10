@@ -4,9 +4,7 @@
 
 export const environment = {
   production: true,
-  base_url: 'http://127.0.0.1:8000' 
- /*  registro: 'http://127.0.0.1:8000/registrar',
-  allUsers: 'http://127.0.0.1:8000/registrar' */
+  base_url: 'http://127.0.0.1:8000'  
 };
 
 /*

@@ -19,7 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { DatatableComponent } from './datatable/datatable.component';
+import { VerusuariosComponent } from './usuarios/verusuarios/verusuarios.component';
+import { EditarusuariosComponent } from './usuarios/editarusuarios/editarusuarios.component';
+
+import { ChartsModule } from 'ng2-charts';
+
 
 /* para las rutas */
 const appRoutes: Routes = [
@@ -27,7 +31,9 @@ const appRoutes: Routes = [
   {path:'registro', component:RegistroComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'usuarios', component:UsuariosComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'ver/usuarios', component:VerusuariosComponent},
+  {path:'editar/usuarios', component:EditarusuariosComponent}
  
 ];
 
@@ -39,7 +45,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     DashboardComponent,
     UsuariosComponent,
-    DatatableComponent
+    VerusuariosComponent,
+    EditarusuariosComponent 
+   
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

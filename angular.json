@@ -29,14 +29,18 @@
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/datatables/media/css/jquery.dataTables.min.css",
               "node_modules/datatables.net-bs/css/dataTables.bootstrap.css",
-              "node_modules/datatables.net-select-bs/css/select.bootstrap.css"
+              "node_modules/datatables.net-select-bs/css/select.bootstrap.css",
+              "node_modules/sweetalert2/dist/sweetalert2.min.css"
              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",              
               "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
-              "node_modules/datatables/media/js/jquery.dataTables.min.js"
+              "node_modules/datatables/media/js/jquery.dataTables.min.js",
+              "node_modules/sweetalert2/dist/sweetalert2.all.min.js",
+              "node_modules/chart.js/src/charts/Chart.Bar.js"
+              
             ]
           },
           "configurations": {
