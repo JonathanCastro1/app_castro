@@ -1,0 +1,29 @@
+<app-header></app-header>
+<br>
+<br>
+
+
+<div class="col-md-6 offset-3">
+
+  <h1>Dashboard</h1>
+
+</div>
+
+
+<!-- float-right el nuevo pullrigth -->
+
+<!-- offset-sm-3 nueva forma de offset en boostrap 4 -->
+
+<div class="col-md-6 offset-3">
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <button (click)="randomize()">Actualizar</button>
+</div>

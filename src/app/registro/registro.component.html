@@ -1,0 +1,109 @@
+<br>
+<br>
+<div class="row col-md-12 justify-content-center">
+  <h2 class="registro">Registro</h2>
+</div>
+
+<br>
+<br>
+
+<div class="row col-md-12 justify-content-center">
+
+  <div *ngIf="alerta"
+ class="alert alert-danger">{{mensaje}}</div>
+
+</div>
+
+<div class="row col-md-12 justify-content-center ">
+
+  <div class="formulario">
+
+    <form #f="ngForm"   (ngSubmit)="registrar(f)">
+      <div class="form-group">
+        <label class="text-success">Nombre:</label>
+        <input type="text"  class="form-control"  
+        [(ngModel)]="usuario.nombre"
+        name="nombre"
+        #usuarioNombre="ngModel"
+        minlength="4"
+        required>
+
+       <div *ngIf="usuarioNombre.errors?.required && usuarioNombre.touched"
+       class="alert alert-danger">Nombre es requerido</div>
+
+      <div *ngIf="usuarioNombre.errors?.minlength && usuarioNombre.touched"
+       class="alert alert-danger">Minimo 4 caracteres</div>
+        
+      </div>
+
+      <div class="form-group">
+        <label class="text-success">Apellido:</label>
+        <input type="text" class="form-control"
+        [(ngModel)]="usuario.apellido"
+        name="apellido"
+        #usuarioApellido="ngModel"
+        minlength="4"
+        required>
+
+        <div *ngIf="usuarioApellido.errors?.required && usuarioApellido.touched"
+        class="alert alert-danger">Apellido es requerido</div>
+ 
+       <div *ngIf="usuarioApellido.errors?.minlength && usuarioApellido.touched"
+        class="alert alert-danger">Minimo 4 caracteres</div>        
+        
+      </div>
+
+      <div class="form-group">
+        <label class="text-success">Email:</label>
+        <input type="text" class="form-control"
+        [(ngModel)]="usuario.email"
+        name="email"
+        #usuarioEmail="ngModel"
+        minlength="4"
+        required>
+
+        <div *ngIf="usuarioEmail.errors?.required && usuarioEmail.touched"
+        class="alert alert-danger">Email es requerido</div>
+ 
+       <div *ngIf="usuarioEmail.errors?.minlength && usuarioEmail.touched"
+        class="alert alert-danger">Minimo 4 caracteres</div> 
+
+      </div>
+
+      <div class="form-group">
+        <label class="text-success">Password:</label>
+        <input type="password"  class="form-control"
+        [(ngModel)]="usuario.password"
+        name="password"
+        #usuarioPassword="ngModel"
+        minlength="4"
+        required>
+
+        <div *ngIf="usuarioPassword.errors?.required && usuarioPassword.touched"
+        class="alert alert-danger">Password es requerido</div>
+ 
+       <div *ngIf="usuarioPassword.errors?.minlength && usuarioPassword.touched"
+        class="alert alert-danger">Minimo 4 caracteres</div>
+
+      </div>
+
+      <div class="form-group">
+        <button type="submit" name="submit" value="submit" class="btn-primary btn-sm fa fa-check">Registrar</button>
+        <button type="reset" class="btn-danger btn-sm fa fa-times">Cancelar</button>
+        <br>
+        <br>
+        <br>
+        <a class="nav-link" routerLink="/login"><span class="btn-default btn-sm fa fa-arrow-left">Back</span></a>
+      </div>
+     
+
+    </form>
+
+  </div>   
+  
+
+</div>
+
+<br>
+<br>
+<br>

@@ -1,0 +1,12 @@
+.registro{
+    border-bottom: double;   
+}
+
+.formulario{
+    border: double;
+    padding-top:50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    background-color: antiquewhite;
+}
